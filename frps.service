@@ -1,0 +1,13 @@
+[Unit]
+Description=Frp Server Service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/local/frp/frps -c /usr/local/frp/frps.ini
+
+[Install]
+WantedBy=multi-user.target
