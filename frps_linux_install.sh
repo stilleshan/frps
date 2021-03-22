@@ -1,5 +1,5 @@
 #!/bin/sh
-FRP_VERSION="0.36.1"
+FRP_VERSION="0.36.2"
 REPO="stilleshan/frps"
 WORK_PATH=$(dirname $(readlink -f $0))
 
