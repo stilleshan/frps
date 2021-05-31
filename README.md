@@ -7,6 +7,8 @@
 > *docker image support for X86 and ARM*
 
 ## 更新
+**2021-05-31** 更新国内镜像方便使用  
+**2021-05-31** 更新 Linux 一键安装脚本同时支持 X86 和 ARM  
 **2021-05-29** 更新从`0.36.2`版本起 docker 镜像同时支持 X86 和 ARM
 
 ## 使用说明
@@ -16,6 +18,8 @@
 安装
 ```shell
 wget https://raw.githubusercontent.com/stilleshan/frps/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
+# 国内 gitee 镜像
+wget https://gitee.com/stilleshan/frps/raw/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
 ```
 
 使用
@@ -29,28 +33,36 @@ sudo systemctl restart frps
 卸载
 ```shell
 wget https://raw.githubusercontent.com/stilleshan/frps/master/frps_linux_uninstall.sh && chmod +x frps_linux_uninstall.sh && ./frps_linux_uninstall.sh
+# 国内 gitee 镜像
+wget https://gitee.com/stilleshan/frps/raw/master/frps_linux_uninstall.sh && chmod +x frps_linux_uninstall.sh && ./frps_linux_uninstall.sh
 ```
 
 
 ### 自定义一键脚本(先 fork 本仓库,在自行修改 frps.ini 文件后运行脚本.)
+> 同时支持 github 和 gitee 平台 fork
+
 - 首先 fork 本仓库
 - 配置 frps.ini
 - 修改 frps_linux_install.sh 脚本
 - 修改脚本链接并运行
 
 #### 修改 frps_linux_install.sh 脚本
-`FRP_VERSION="0.30.0"` 可根据原版项目更新自行修改为最新版本  
-`REPO="stilleshan/frps"` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的GitHub账号ID.
+`FRP_VERSION="0.36.2"` 可根据原版项目更新自行修改为最新版本  
+`REPO="stilleshan/frps"` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的 GitHub 或 gitee 账号ID.
 
 #### 运行一键脚本
-修改以下脚本链接中的`stilleshan`为你的GitHub账号ID后,运行即可.
+修改以下脚本链接中的`stilleshan`为你的 GitHub 或 gitee 账号ID后,运行即可.
 ```shell
 wget https://raw.githubusercontent.com/stilleshan/frps/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
+# 国内 gitee 镜像
+wget https://gitee.com/stilleshan/frps/raw/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
 ```
 #### 卸载脚本
 frps_linux_uninstall.sh 卸载脚本为通用脚本,可直接运行,也可同上方式修改链接后运行.
 ```shell
 wget https://raw.githubusercontent.com/stilleshan/frps/master/frps_linux_uninstall.sh && chmod +x frps_linux_uninstall.sh && ./frps_linux_uninstall.sh
+# 国内 gitee 镜像
+wget https://gitee.com/stilleshan/frps/raw/master/frps_linux_uninstall.sh && chmod +x frps_linux_uninstall.sh && ./frps_linux_uninstall.sh
 ```
 
 ### frps相关命令
