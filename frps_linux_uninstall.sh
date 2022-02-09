@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+0.39.1#!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
