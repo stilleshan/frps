@@ -1,4 +1,4 @@
-0.39.1#!/usr/bin/env bash
+#!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
@@ -14,11 +14,12 @@ Font="\033[0m"
 # variable
 WORK_PATH=$(dirname $(readlink -f $0))
 FRP_NAME=frps
-FRP_VERSION=0.39.0
+FRP_VERSION=0.39.1
 FRP_PATH=/usr/local/frp
 
 # 停止frpc
 sudo systemctl stop ${FRP_NAME}
+sudo systemctl disable ${FRP_NAME}
 # 删除frpc
 rm -rf ${FRP_PATH}
 # 删除frpc.service
