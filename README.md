@@ -45,7 +45,7 @@ wget https://github.ioiox.com/stilleshan/frps/raw/branch/master/frps_linux_unins
 - Push 仓库到 GitHub
 
 #### 修改 frps_linux_install.sh 脚本
-`FRP_VERSION="0.40.0"` 可根据原版项目更新自行修改为最新版本.  
+`FRP_VERSION="0.41.0"` 可根据原版项目更新自行修改为最新版本.  
 `REPO="stilleshan/frps"` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的 GitHub 账号ID.
 
 #### 执行一键脚本
