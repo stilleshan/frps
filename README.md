@@ -7,9 +7,9 @@
 > *docker image support for X86 and ARM*
 
 ## 更新
-**2021-05-31** 更新国内镜像方便使用  
-**2021-05-31** 更新 Linux 一键安装脚本同时支持 X86 和 ARM  
-**2021-05-29** 更新从`0.36.2`版本起 docker 镜像同时支持 X86 和 ARM
+- **2021-05-31** 更新国内镜像方便使用
+- **2021-05-31** 更新 Linux 一键安装脚本同时支持 X86 和 ARM
+- **2021-05-29** 更新从`0.36.2`版本起 docker 镜像同时支持 X86 和 ARM
 
 ## 使用
 由于 frps 服务端需要配置参数,本脚本为原版 frps.ini ,安装完毕后请自行编辑 frps.ini 配置端口,密码等相关参数并重启服务.同时你也可以 fork 本仓库后自行修改 frps.ini ,在进行一键安装也非常方便.后期也可自行配置 frps.ini 和调整 frps 的版本.
@@ -45,8 +45,8 @@ wget https://github.ioiox.com/stilleshan/frps/raw/branch/master/frps_linux_unins
 - Push 仓库到 GitHub
 
 #### 修改 frps_linux_install.sh 脚本
-`FRP_VERSION="0.41.0"` 可根据原版项目更新自行修改为最新版本.  
-`REPO="stilleshan/frps"` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的 GitHub 账号ID.
+`FRP_VERSION=0.42.0` 可根据原版项目更新自行修改为最新版本.  
+`REPO=stilleshan/frps` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的 GitHub 账号ID.
 
 #### 执行一键脚本
 修改以下脚本链接中的`stilleshan`为你的 GitHub 账号 ID 后,执行即可.
