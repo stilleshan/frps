@@ -18,9 +18,9 @@
 ### 一键脚本(先执行脚本,在自行修改 frps.toml 文件.)
 安装
 ```shell
-wget https://raw.githubusercontent.com/shenyunet/frps/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
+wget https://raw.githubusercontent.com/stilleshan/frps/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
 # 以下为国内镜像
-wget https://github.ioiox.com/shenyunet/frps/raw/branch/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
+wget https://github.ioiox.com/stilleshan/frps/raw/branch/master/frps_linux_install.sh && chmod +x frps_linux_install.sh && ./frps_linux_install.sh
 ```
 
 使用
