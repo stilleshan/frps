@@ -22,7 +22,7 @@ log.maxDays = 1
 log.disablePrintColor = false
 
 auth.method = "token"
-auth.token = "admin"
+auth.token = "12345678"
 
 # Only allow frpc to bind ports you list. By default, there won't be any limit.
 allowPorts = [
