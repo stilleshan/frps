@@ -13,7 +13,7 @@ Font="\033[0m"
 
 # variable
 FRP_VERSION=0.54.0
-REPO=shenyunet/frps
+REPO=stilleshan/frps
 WORK_PATH=$(dirname $(readlink -f $0))
 FRP_NAME=frps
 FRP_PATH=/usr/local/frp
