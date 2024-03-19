@@ -3,6 +3,9 @@ bindPort = 7000
 #kcpBindPort = 7000
 quicBindPort = 7000
 
+vhostHTTPPort = 80
+vhostHTTPSPort = 443
+
 transport.maxPoolCount = 2000
 transport.tcpMux = true
 transport.tcpMuxKeepaliveInterval = 60
@@ -16,19 +19,17 @@ webServer.password = "admin"
 webServer.pprofEnable = false
 
 log.to = "./frps.log"
-# trace, debug, info, warn, error
-log.level = "error"
-log.maxDays = 1
+log.level = "info"
+log.maxDays = 3
 log.disablePrintColor = false
 
 auth.method = "token"
 auth.token = "12345678"
 
-# Only allow frpc to bind ports you list. By default, there won't be any limit.
 allowPorts = [
-  { start = 1, end = 65535 }
+  { start = 10001, end = 50000 }
 ]
 
-maxPortsPerClient = 0
+maxPortsPerClient = 8
 udpPacketSize = 1500
-natholeAnalysisDataReserveHours = 24
+natholeAnalysisDataReserveHours = 168
