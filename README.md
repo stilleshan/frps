@@ -7,7 +7,7 @@
 > *docker image support for X86 and ARM*
 
 ## 更新
-- **2024-03-19** 更新到最新版本`0.55.1`，全新版本配置文件已更新，请注意修改配置文件。
+- **2024-03-19** 更新到最新版本`0.56.0`，全新版本配置文件已更新，请注意修改配置文件。
 - **2024-02-25** 更新toml配置文件
 - **2021-05-31** 更新国内镜像方便使用
 - **2021-05-31** 更新 Linux 一键安装脚本同时支持 X86 和 ARM
@@ -47,7 +47,7 @@ wget https://github.ioiox.com/stilleshan/frps/raw/branch/master/frps_linux_unins
 - Push 仓库到 GitHub
 
 #### 修改 frps_linux_install.sh 脚本
-`FRP_VERSION=0.55.1` 可根据原版项目更新自行修改为最新版本.  
+`FRP_VERSION=0.56.0` 可根据原版项目更新自行修改为最新版本.  
 `REPO=stilleshan/frps` 由于 **fork** 到你自己的仓库,需修改`stilleshan`为你的 GitHub 账号ID.
 
 #### 执行一键脚本
