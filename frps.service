@@ -8,6 +8,7 @@ Type=simple
 Restart=on-failure
 RestartSec=5s
 ExecStart=/usr/local/frp/frps -c /usr/local/frp/frps.toml
+ExecReload=/usr/local/frp/frps reload -c /usr/local/frp/frps.toml
 
 [Install]
 WantedBy=multi-user.target
