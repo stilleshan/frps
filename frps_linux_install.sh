@@ -17,7 +17,7 @@ REPO=stilleshan/frps
 WORK_PATH=$(dirname $(readlink -f $0))
 FRP_NAME=frps
 FRP_PATH=/usr/local/frp
-PROXY_URL="https://mirror.ghproxy.com/"
+PROXY_URL="https://ghp.ci/"
 
 # check frps
 if [ -f "/usr/local/frp/${FRP_NAME}" ] || [ -f "/usr/local/frp/${FRP_NAME}.toml" ] || [ -f "/lib/systemd/system/${FRP_NAME}.service" ];then
@@ -72,20 +72,24 @@ fi
 
 FILE_NAME=frp_${FRP_VERSION}_linux_${PLATFORM}
 
-# download
-if [ $GOOGLE_HTTP_CODE == "200" ]; then
-    wget -P ${WORK_PATH} https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/${FILE_NAME}.tar.gz -O ${FILE_NAME}.tar.gz
-    wget -P ${WORK_PATH} https://raw.githubusercontent.com/${REPO}/master/${FRP_NAME}.toml -O ${FRP_NAME}.toml
-else
-    if [ $PROXY_HTTP_CODE == "200" ]; then
-        wget -P ${WORK_PATH} ${PROXY_URL}https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/${FILE_NAME}.tar.gz -O ${FILE_NAME}.tar.gz
-        wget -P ${WORK_PATH} ${PROXY_URL}https://raw.githubusercontent.com/${REPO}/master/${FRP_NAME}.toml -O ${FRP_NAME}.toml
-    else
-        echo -e "${Red}检测 GitHub Proxy 代理失效 开始使用官方地址下载${Font}"
+if [ ! -f "${WORK_PATH}/${FILE_NAME}.tar.gz" ]; then
+    if [ $GOOGLE_HTTP_CODE == "200" ]; then
         wget -P ${WORK_PATH} https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/${FILE_NAME}.tar.gz -O ${FILE_NAME}.tar.gz
         wget -P ${WORK_PATH} https://raw.githubusercontent.com/${REPO}/master/${FRP_NAME}.toml -O ${FRP_NAME}.toml
+    else
+        if [ $PROXY_HTTP_CODE == "200" ]; then
+            wget -P ${WORK_PATH} ${PROXY_URL}https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/${FILE_NAME}.tar.gz -O ${FILE_NAME}.tar.gz
+            wget -P ${WORK_PATH} ${PROXY_URL}https://raw.githubusercontent.com/${REPO}/master/${FRP_NAME}.toml -O ${FRP_NAME}.toml
+        else
+            echo -e "${Red}检测 GitHub Proxy 代理失效 开始使用官方地址下载${Font}"
+            wget -P ${WORK_PATH} https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/${FILE_NAME}.tar.gz -O ${FILE_NAME}.tar.gz
+            wget -P ${WORK_PATH} https://raw.githubusercontent.com/${REPO}/master/${FRP_NAME}.toml -O ${FRP_NAME}.toml
+        fi
     fi
+else
+    echo -e "${Green}文件 ${FILE_NAME}.tar.gz 已存在, 跳过下载.${Font}"
 fi
+
 tar -zxvf ${FILE_NAME}.tar.gz
 mkdir -p ${FRP_PATH}
 mv ${FILE_NAME}/${FRP_NAME} ${FRP_PATH}
