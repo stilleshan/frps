@@ -12,7 +12,7 @@ Font="\033[0m"
 # fonts color
 
 # variable
-FRP_VERSION=0.61.2
+FRP_VERSION=0.62.0
 REPO=stilleshan/frps
 WORK_PATH=$(dirname $(readlink -f $0))
 FRP_NAME=frps
